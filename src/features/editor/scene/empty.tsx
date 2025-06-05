@@ -45,7 +45,7 @@ const SceneEmpty = () => {
           <DroppableArea
             onDragStateChange={setIsDraggingOver}
             className={`absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 transform items-center justify-center border border-dashed text-center transition-colors duration-200 ease-in-out ${
-              isDraggingOver ? "border-white bg-white/10" : "border-white/15"
+              isDraggingOver ? "border-white bg-white/40" : "border-white/100"
             }`}
             style={{
               width: desiredSize.width,
@@ -60,7 +60,7 @@ const SceneEmpty = () => {
                   aria-hidden="true"
                 />
                 <div>
-                <p className="font-bold text-white">Nothing in the timeline (Loki) </p>
+                <p className="font-bold text-white">Nothing in the timeline</p>
                 </div>
             </div>
           </DroppableArea>
