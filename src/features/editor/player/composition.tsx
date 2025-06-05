@@ -10,6 +10,7 @@ import {
 import { merge } from "lodash";
 import { groupTrackItems } from "../utils/track-items";
 import { calculateTextHeight } from "../utils/text";
+import MediaBackground from "./media-background";
 
 const Composition = () => {
   const [editableTextId, setEditableTextId] = useState<string | null>(null);
@@ -143,6 +144,7 @@ const Composition = () => {
 
   return (
     <>
+      <MediaBackground />
       {groupedItems.map((group, index) => {
         if (group.length === 1) {
           const item = mergedTrackItemsDeatilsMap[group[0].id];

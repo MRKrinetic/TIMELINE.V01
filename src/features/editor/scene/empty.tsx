@@ -1,7 +1,6 @@
 import useStore from "../store/use-store";
 import { useEffect, useRef, useState } from "react";
 import { Droppable } from "@/components/ui/droppable";
-import { PlusIcon } from "lucide-react";
 import { DroppableArea } from "./droppable";
 
 const SceneEmpty = () => {
@@ -40,8 +39,8 @@ const SceneEmpty = () => {
           maxFileCount={4}
           maxSize={4 * 1024 * 1024}
           disabled={false}
-          onValueChange={onSelectFiles}
-          className="h-full w-full flex-1 bg-background"
+          onValueChange={onSelectFiles} 
+          className="h-full w-full flex-1 bg-background "
         >
           <DroppableArea
             onDragStateChange={setIsDraggingOver}
@@ -54,15 +53,15 @@ const SceneEmpty = () => {
             }}
           >
             <div className="flex flex-col items-center justify-center gap-4 pb-12">
-              <div className="hover:bg-primary-dark cursor-pointer rounded-md border bg-primary p-2 text-secondary transition-colors duration-200">
-                <PlusIcon className="h-5 w-5" aria-hidden="true" />
-              </div>
-              <div className="flex flex-col gap-px">
-                <p className="text-sm text-muted-foreground">Click to upload</p>
-                <p className="text-xs text-muted-foreground/70">
-                  Or drag and drop files here
-                </p>
-              </div>
+              <img
+                  src="/src/assets/plus-icon.gif"
+                  alt="Add content"
+                  className="h-20 w-20"
+                  aria-hidden="true"
+                />
+                <div>
+                <p className="font-bold text-white">Nothing in the timeline (Loki) </p>
+                </div>
             </div>
           </DroppableArea>
         </Droppable>

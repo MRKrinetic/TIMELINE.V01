@@ -34,12 +34,13 @@ interface ITimelineStore {
   sceneMoveableRef: React.RefObject<Moveable> | null;
   setSceneMoveableRef: (ref: React.RefObject<Moveable>) => void;
   setState: (state: any) => Promise<void>;
+  setSize: (size: { width: number; height: number }) => void;
 }
 
 const useStore = create<ITimelineStore>((set) => ({
   size: {
-    width: 1080,
-    height: 1920,
+    width: 1920,
+    height: 1200,
   },
 
   timeline: null,
@@ -85,6 +86,8 @@ const useStore = create<ITimelineStore>((set) => ({
   setPlayerRef: (playerRef: React.RefObject<PlayerRef> | null) =>
     set({ playerRef }),
   setSceneMoveableRef: (ref) => set({ sceneMoveableRef: ref }),
+  setSize: (size: { width: number; height: number }) =>
+    set({ size }),
 }));
 
 export default useStore;

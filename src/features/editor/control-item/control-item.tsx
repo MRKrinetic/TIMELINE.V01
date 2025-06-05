@@ -17,6 +17,7 @@ import useStore from "../store/use-store";
 import useLayoutStore from "../store/use-layout-store";
 import BasicCaption from "./basic-caption";
 import { LassoSelect } from "lucide-react";
+import CompositionSettings from "./composition-settings";
 
 const Container = ({ children }: { children: React.ReactNode }) => {
   const { activeIds, trackItemsMap, trackItemDetailsMap, transitionsMap } =
@@ -57,11 +58,16 @@ const ActiveControlItem = ({
   trackItem?: ITrackItemAndDetails;
 }) => {
   if (!trackItem) {
-    console.log("No item selected");
+    console.log("No item selected - showing composition settings");
     return (
-      <div className="mb-32 flex flex-1 flex-col items-center justify-center gap-4 text-muted-foreground">
-        <LassoSelect />
-        <span className="text-zinc-500">No item selected</span>
+      <div className="flex flex-1 flex-col p-4 gap-4">
+        <CompositionSettings />
+        <div className="flex flex-1 flex-col items-center justify-center gap-4 text-muted-foreground">
+          <LassoSelect />
+          <span className="text-zinc-500 text-center text-sm">
+            Select an item on the timeline to edit its properties
+          </span>
+        </div>
       </div>
     );
   }

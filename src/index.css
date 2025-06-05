@@ -32,30 +32,30 @@
   }
 
   .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 12% 6.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
-    --secondary: 240 3.7% 13.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
+    --background: 270 15% 4%;
+    --foreground: 280 10% 95%;
+    --card: 270 20% 6%;
+    --card-foreground: 280 10% 95%;
+    --popover: 270 25% 8%;
+    --popover-foreground: 280 10% 95%;
+    --primary: 270 80% 60%;
+    --primary-foreground: 270 15% 4%;
+    --secondary: 270 30% 12%;
+    --secondary-foreground: 280 10% 95%;
+    --muted: 270 25% 15%;
+    --muted-foreground: 270 15% 65%;
+    --accent: 270 60% 50%;
+    --accent-foreground: 270 15% 4%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 3.7% 17.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
-    --scene: 240 3.7% 11.9%;
+    --border: 270 30% 18%;
+    --input: 270 25% 15%;
+    --ring: 270 80% 60%;
+    --scene: 270 20% 8%;
 
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --foreground-rgb: 240, 230, 255;
+    --background-start-rgb: 10, 5, 15;
+    --background-end-rgb: 15, 8, 20;
   }
 }
 
@@ -81,8 +81,8 @@ html {
 }
 
 .selecto-selection {
-  background: rgba(0, 216, 214, 0.1) !important;
-  border: 1px solid rgba(0, 216, 214, 1) !important;
+  background: rgba(147, 51, 234, 0.15) !important;
+  border: 1px solid rgba(147, 51, 234, 0.8) !important;
 }
 
 @layer utilities {
@@ -99,15 +99,15 @@ html {
 }
 
 .designcombo-scene-moveable .moveable-control {
-  background: #333 !important;
+  background: #1a0b2e !important;
   box-sizing: border-box !important;
   display: block !important;
   z-index: 10000 !important;
   border-radius: 6px !important;
   cursor: crosshair !important;
 
-  border: 1px solid #ffffff !important;
-  /* box-shadow: 0 0 2px 0 rgb(86, 90, 98, 0.2) !important; */
+  border: 1px solid #9333ea !important;
+  box-shadow: 0 0 8px 0 rgba(147, 51, 234, 0.3) !important;
   width: 12px !important;
   height: 12px !important;
   margin-top: -6px !important;
@@ -155,7 +155,7 @@ html {
 .moveable-line {
   pointer-events: none !important;
   height: 1px !important;
-  background: #fff !important;
+  background: #9333ea !important;
 }
 
 /* CSS */
@@ -202,7 +202,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .ScrollAreaScrollbar:hover {
-  background: var(--zinc-800);
+  background: rgba(147, 51, 234, 0.1);
 }
 .ScrollAreaScrollbar[data-orientation="vertical"] {
   width: 10px;
@@ -214,7 +214,7 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .ScrollAreaThumb {
   flex: 1;
-  background: var(--zinc-700);
+  background: rgba(147, 51, 234, 0.6);
   border-radius: 10px;
   position: relative;
 }
@@ -249,10 +249,11 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .box {
-  border: 1px solid white;
+  border: 1px solid #9333ea;
   position: absolute;
   inset: 0;
   touch-action: none;
+  box-shadow: 0 0 10px rgba(147, 51, 234, 0.3);
 }
 
 .box svg {
@@ -265,7 +266,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .box svg line {
-  stroke: white;
+  stroke: #9333ea;
   stroke-width: 1px;
 }
 
@@ -274,19 +275,22 @@ input[type="number"]::-webkit-outer-spin-button {
   top: -2rem;
   right: 0;
   z-index: 9999;
-  color: white;
+  color: #e9d5ff;
   font-size: 0.9rem;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(26, 11, 46, 0.8);
   padding: 0.25rem;
+  border: 1px solid rgba(147, 51, 234, 0.5);
+  border-radius: 4px;
 }
 
 .handles > div {
   position: absolute;
   width: 1.5rem;
   height: 1.5rem;
-  border-color: white;
+  border-color: #9333ea;
   touch-action: manipulation;
   border-radius: 3px;
+  background: rgba(26, 11, 46, 0.8);
 }
 
 /* nw n ne */

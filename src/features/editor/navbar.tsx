@@ -214,6 +214,15 @@ const DownloadPopover = ({ stateManager }: { stateManager: StateManager }) => {
             >
               JSON
             </div>
+            <div
+              className="flex h-8 items-center rounded-sm px-3 text-sm hover:cursor-pointer hover:bg-zinc-800"
+              onClick={() => {
+                actions.setExportType("gif");
+                setIsExportTypeOpen(false);
+              }}
+            >
+              GIF
+            </div>
           </PopoverContent>
         </Popover>
 

@@ -24,8 +24,8 @@ import FloatingControl from "./control-item/floating-controls/floating-control";
 
 const stateManager = new StateManager({
   size: {
-    width: 1080,
-    height: 1920,
+    width: 1920,
+    height: 1200,
   },
 });
 

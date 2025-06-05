@@ -202,7 +202,11 @@ class Video extends VideoBase {
     return new Promise<void>((resolve) => {
       const img = new Image();
       img.crossOrigin = "anonymous";
-      img.src = fallbackThumbnail + "?t=" + Date.now();
+      // Only append timestamp for non-data URLs to avoid invalid URL errors
+      const imageUrl = fallbackThumbnail.startsWith('data:')
+        ? fallbackThumbnail
+        : fallbackThumbnail + "?t=" + Date.now();
+      img.src = imageUrl;
       img.onload = () => {
         // Create a temporary canvas to resize the image
         const canvas = document.createElement("canvas");

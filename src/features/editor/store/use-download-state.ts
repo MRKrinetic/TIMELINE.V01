@@ -9,7 +9,7 @@ interface Output {
 interface DownloadState {
   projectId: string;
   exporting: boolean;
-  exportType: "json" | "mp4";
+  exportType: "json" | "mp4" | "gif";
   progress: number;
   output?: Output;
   payload?: IDesign;
@@ -17,7 +17,7 @@ interface DownloadState {
   actions: {
     setProjectId: (projectId: string) => void;
     setExporting: (exporting: boolean) => void;
-    setExportType: (exportType: "json" | "mp4") => void;
+    setExportType: (exportType: "json" | "mp4" | "gif") => void;
     setProgress: (progress: number) => void;
     setState: (state: Partial<DownloadState>) => void;
     setOutput: (output: Output) => void;
@@ -62,7 +62,7 @@ export const useDownloadState = create<DownloadState>((set, get) => ({
             options: {
               fps: 30,
               size: payload.size,
-              format: "mp4",
+              format: get().exportType === "gif" ? "gif" : "mp4",
             },
           }),
         });

@@ -1,10 +1,14 @@
-const MediaBackground = ({ background }: { background: string }) => {
+import useStore from "../store/use-store";
+
+const MediaBackground = ({ background }: { background?: string }) => {
+  const { backgroundColor } = useStore();
+
   return (
     <div
       style={{
         height: "10000px",
         width: "10000px",
-        background: background || "#00000",
+        background: background || backgroundColor,
         top: -2500,
         left: -2500,
         position: "fixed",

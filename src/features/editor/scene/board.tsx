@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { DroppableArea } from "./droppable";
+import useStore from "../store/use-store";
 
 const SceneBoard = ({
   size,
@@ -9,6 +10,7 @@ const SceneBoard = ({
   children: React.ReactNode;
 }) => {
   const [isDraggingOver, setIsDraggingOver] = useState(false);
+  const { backgroundColor } = useStore();
 
   return (
     <DroppableArea
@@ -24,8 +26,9 @@ const SceneBoard = ({
         style={{
           width: size.width,
           height: size.height,
+          boxShadow: `0 0 0 5000px ${backgroundColor}`,
         }}
-        className={`pointer-events-none absolute z-50 border border-white/15 transition-colors duration-200 ease-in-out ${isDraggingOver ? "border-4 border-dashed border-white bg-white/[0.075]" : "bg-transparent"} shadow-[0_0_0_5000px_#121213]`}
+        className={`pointer-events-none absolute z-50 border border-white/15 transition-colors duration-200 ease-in-out ${isDraggingOver ? "border-4 border-dashed border-white bg-white/[0.075]" : "bg-transparent"}`}
       />
       {children}
     </DroppableArea>
