@@ -31,7 +31,7 @@ const ActiveMenuItem = () => {
 
 export const MenuItem = () => {
   return (
-    <div className="w-[300px] flex-1">
+    <div className="w-[300px] flex-1 top-0 overflow-y-auto overflow-x-hidden">
       <ActiveMenuItem />
     </div>
   );

@@ -787,48 +787,51 @@ const UploadedVideoItem = ({
   };
 
   const content = (
-    <div className="relative">
-      <div
-        onClick={handleClick}
-        className="flex w-full items-center justify-center overflow-hidden bg-background pb-2 relative cursor-pointer"
+   <div className="min-h-screen overflow-y-auto overflow-x-hidden flex flex-col items-center pt-2 px-2 pb-4">
+  <div className="relative w-full max-w-md">
+    <div
+      onClick={handleClick}
+      className="flex w-full items-center justify-center overflow-hidden bg-background pb-2 relative cursor-pointer"
+    >
+      {video.preview ? (
+        <img
+          draggable={false}
+          src={video.preview}
+          className="h-full w-full rounded-md object-cover"
+          alt={video.name || "Uploaded video"}
+        />
+      ) : (
+        <div className="h-20 w-full rounded-md bg-muted flex items-center justify-center">
+          <VideoIcon className="h-8 w-8 text-muted-foreground" />
+        </div>
+      )}
+
+      {/* Remove Button */}
+      <Button
+        variant="ghost"
+        size="sm"
+        onClick={(e) => {
+          e.stopPropagation();
+          onRemove(video.id);
+        }}
+        className="absolute top-1 right-1 h-6 w-6 p-0 bg-black/50 hover:bg-black/70"
       >
-        {video.preview ? (
-          <img
-            draggable={false}
-            src={video.preview}
-            className="h-full w-full rounded-md object-cover"
-            alt={video.name || "Uploaded video"}
-          />
-        ) : (
-          <div className="h-20 w-full rounded-md bg-muted flex items-center justify-center">
-            <VideoIcon className="h-8 w-8 text-muted-foreground" />
-          </div>
-        )}
-
-        {/* Remove Button */}
-        <Button
-          variant="ghost"
-          size="sm"
-          onClick={(e) => {
-            e.stopPropagation();
-            onRemove(video.id);
-          }}
-          className="absolute top-1 right-1 h-6 w-6 p-0 bg-black/50 hover:bg-black/70"
-        >
-          <X className="h-3 w-3 text-white" />
-        </Button>
-      </div>
-
-      {/* Video Name and Duration */}
-      <div className="text-xs text-muted-foreground truncate px-1 mt-1">
-        <div className="truncate">{video.name || "Uploaded Video"}</div>
-        {video.duration && (
-          <div className="text-xs opacity-75">
-            {timeToString({ time: video.duration })}
-          </div>
-        )}
-      </div>
+        <X className="h-3 w-3 text-white" />
+      </Button>
     </div>
+
+    {/* Video Name and Duration */}
+    <div className="text-xs text-muted-foreground truncate px-1 mt-1">
+      <div className="truncate">{video.name || "Uploaded Video"}</div>
+      {video.duration && (
+        <div className="text-xs opacity-75">
+          {timeToString({ time: video.duration })}
+        </div>
+      )}
+    </div>
+  </div>
+</div>
+
   );
 
   return (

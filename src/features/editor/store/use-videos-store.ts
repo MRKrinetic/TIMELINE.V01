@@ -1,8 +1,11 @@
+
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { IVideo } from "@designcombo/types";
 import { VIDEOS as STOCK_VIDEOS } from "../data/video";
 
+
+// Then use <BackendVideos /> instead of <Videos />
 export interface VideoItem {
   id: string;
   type: "video";
@@ -104,3 +107,5 @@ const useVideosStore = create<VideosState>()(
 );
 
 export default useVideosStore;
+# Create .env.local in project root
+echo "REACT_APP_API_URL=http://localhost:3001" > .env.local
